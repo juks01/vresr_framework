@@ -23,10 +23,6 @@ _wp setWaypointType "SAD";
 
 
 
-
-
-
-
 // SIIRRÄ OMAAN FUNKTIOTIEDOSTOON
 JPS_fnc_createEnemy = {
 	_unitCount = 2;
