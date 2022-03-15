@@ -14,7 +14,7 @@
 
 enableDebugConsole = 1;
 
-#include "ui\mission_params.hpp"
+#include "vresr_framework\ui\mission_params.hpp"
 
 class CfgFunctions {
 	class JWave {
