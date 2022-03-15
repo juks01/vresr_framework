@@ -4,4 +4,4 @@
 
 
 // Activate PARAMS menu in slotting
-#include "ui\mission_params.hpp"
+#include "vresr_framework\ui\mission_params.hpp"

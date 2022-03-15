@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2460.6421,98.539337,5716.3936};
-		dir[]={-0.25952175,-0.53682244,-0.80280036};
-		up[]={-0.16512741,0.84369034,-0.51080024};
-		aside[]={-0.95152342,7.9424353e-008,0.30760115};
+		pos[]={2453.814,88.362663,5715.7544};
+		dir[]={-0.039229803,-0.42998323,-0.90199578};
+		up[]={-0.018684203,0.9028306,-0.42958501};
+		aside[]={-0.99906427,-7.590279e-008,0.043453071};
 	};
 };
 binarizationWanted=0;
@@ -525,7 +525,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=20;
 		class Item0
 		{
 			dataType="Group";
@@ -1116,85 +1116,6 @@ class Mission
 			};
 			id=44;
 			type="Sign_Arrow_Large_Yellow_F";
-		};
-		class Item20
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=4;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2452.1663,74.261017,5687.2695};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-					};
-					id=86;
-					type="B_Soldier_TL_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2457.1663,74.023865,5682.2695};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=87;
-					type="B_soldier_AA_F";
-					atlOffset=7.6293945e-006;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2447.1663,74.016602,5682.2695};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=88;
-					type="B_soldier_AA_F";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2462.1663,73.825195,5677.2695};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=89;
-					type="B_soldier_AAA_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=85;
 		};
 	};
 };
