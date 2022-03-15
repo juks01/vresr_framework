@@ -13,3 +13,6 @@
 */
 
 enableDebugConsole = 1;
+
+// Activate PARAMS menu in slotting
+#include "vresr_framework\ui\mission_params.hpp"
