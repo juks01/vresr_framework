@@ -1,26 +1,30 @@
 
 						["--addGroup loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];
 
-params ["_wave", "_enemies", "_targets", "_classes", "_arrBaseTargets"];
 
-// Add some randomness if more than 2 enemies in a group
-if(_enemies > 2) then {
-	fixedEnemies = selectRandom [_enemies-1, _enemies, _enemies+1];
-} else {
-	fixedEnemies = _enemies;
+
+VRR_fnc_addGroup = {
+	params ["_enemies", "_target", "_classes", "_staticLeaders", "_staticGrunt", "_side"];
+
+	_group = createGroup _side;
+	_group createUnit [selectRandom _staticLeaders, _target, [], 3, "NONE"];			//Lisätään SL tai TL
+	_group createUnit [_staticGrunt, _target, [], 3, "NONE"];							//Lisätään rifleman
+
+	// Add some randomness if more than 2 enemies in a group
+	if(_enemies > 2) then {
+		fixedEnemies = round random [_enemies-2, _enemies, _enemies+1];
+	} else {
+		fixedEnemies = 0;
+	};
+
+	// spawn enemies to group
+	for [{private _i = 0}, {_i < fixedEnemies}, {_i = _i + 1}] do {
+		_group createUnit [selectRandom _classes, _target, [], 3, "NONE"];
+	};
+
+	_group;
+
 };
-
-_group = createGroup east;
-_pos = position selectRandom _targets;
-
-// spawn enemies to group
-for [{private _i = 0}, {_i < fixedEnemies}, {_i = _i + 1}] do {
-	_group createUnit [selectRandom _classes, _pos, [], 50, "NONE"];
-};
-
-_wp = _group addWaypoint [position selectRandom _arrBaseTargets, 0];
-_wp setWaypointType "SAD";
-
 
 
 // SIIRRÄ OMAAN FUNKTIOTIEDOSTOON
