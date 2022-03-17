@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2215.1069,82.068207,5728.2944};
-		dir[]={-0.23880792,-0.72373468,0.64744705};
-		up[]={-0.25045401,0.69007444,0.67902231};
-		aside[]={0.93821841,-1.7951243e-007,0.34605721};
+		pos[]={2449.2544,84.383957,5695.1401};
+		dir[]={-0.74366754,-0.62511468,0.23713265};
+		up[]={-0.59557927,0.78053093,0.1899116};
+		aside[]={0.30380553,-1.9873551e-007,0.95275754};
 	};
 };
 binarizationWanted=0;
@@ -39,14 +39,13 @@ addons[]=
 	"A3_Modules_F",
 	"A3_Structures_F_Mil_Fortification",
 	"A3_Ui_F",
-	"A3_Structures_F_Mil_Helipads",
-	"A3_Misc_F_Helpers"
+	"A3_Structures_F_Mil_Helipads"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=9;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -107,13 +106,6 @@ class AddonsMetaData
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item9
-		{
-			className="A3_Misc_F";
-			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -525,7 +517,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=20;
 		class Item0
 		{
 			dataType="Group";
@@ -1101,23 +1093,6 @@ class Mission
 			atlOffset=7.6293945e-006;
 		};
 		class Item19
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2454.1389,74.8815,5646.1621};
-				angles[]={0.12435512,0,0.15377705};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="wheeledFace";
-			};
-			id=44;
-			type="Sign_Arrow_Large_Yellow_F";
-		};
-		class Item20
 		{
 			dataType="Marker";
 			position[]={2169.2178,3.9211426,5805.5938};

@@ -22,8 +22,6 @@ _wheeledVeh2 = "B_Truck_01_fuel_F";
 _wheeledVeh3 = "B_Truck_01_medical_F";
 _wheeledVeh4 = "B_Truck_01_Repair_F";
 
-//_wheeledVeh = [_wheeledVeh1, _wheeledVeh2, _wheeledVeh3, _wheeledVeh4];
-//_wheeledDir = _wheeledVeh setDir wheeledFace;
 
 _action = ["vehicleAction", "Wheeled", "", {}, {}] call ace_interact_menu_fnc_createAction;           		// Creating action to ace menu
 [vehiclemenu, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;    			// Add action when ace menu item is selected
