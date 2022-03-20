@@ -35,3 +35,8 @@ VRR_fnc_Spawner = {
 
 //		_wp = _group addWaypoint [position selectRandom _arrBaseTargets, 0]; 					// TODO TARGET
 //		_wp setWaypointType "SAD";
+
+
+
+// Keep this on the bottom
+if(VRR_Framework_Debug > 0) then {		["-fnc_Spawner loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];	};
