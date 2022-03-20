@@ -1,3 +1,11 @@
+/*
+
+VRR_fnc_Spawner - main function to spawn units (groups) and vehicles
+
+	Parameters:
+	None
+
+*/
 
 VRR_fnc_Spawner = {
 	arrEnemyClasses = ["O_Soldier_F", "O_Soldier_AR_F", "O_medic_F", "O_engineer_F", "O_Soldier_GL_F", "O_soldier_M_F", "O_soldier_exp_F", "O_Soldier_AA_F", "O_Soldier_AT_F" ];
@@ -5,7 +13,7 @@ VRR_fnc_Spawner = {
 
 	intGroups = 1;
 	intGroupSize = 3;
-/*
+/*		TODO: random pos in area
 	_marker = markerTarget1;
 	_radius = getMarkerSize _marker select 0;
 	_targetPos = (getMarkerPos _marker) getPos [random(_radius), random(360)];
