@@ -22,20 +22,23 @@ VRR_fnc_addGroup = {
 	if(count _staticLeaders > 0) then {												// If leader array is defined
 		_group createUnit [selectRandom _staticLeaders, _target, [], 3, "NONE"];		//Lisätään SL tai TL
 	};
-	if(_staticGrunt) then {															// If static soldier is defined
+	if(!isNil _staticGrunt) then {															// If static soldier is defined
 	_group createUnit [_staticGrunt, _target, [], 3, "NONE"];							//Lisätään rifleman
 	};
 
-	// Add some randomness if more than 2 enemies in a group
+	// Add some randomness if more than 2 units in a group
 	if(_units > 2) then {
 		fixedUnits = round random [_units-2, _units-1, _units+1];
 	} else {
 		fixedUnits = 0;
 	};
 
-	// spawn enemies to group
+	// spawn units to group
 	for [{private _i = 0}, {_i < fixedUnits}, {_i = _i + 1}] do {
-		_group createUnit [selectRandom _classes, _target, [], 3, "NONE"];
+		[_group, _classes, _target] spawn {
+			params ["_group", "_classes", "_target"];
+			_group createUnit [selectRandom _classes, _target, [], 3, "NONE"];
+		};
 	};
 
 	_group;		// return group (might be needed in future)

@@ -14,9 +14,9 @@ if(VRR_Framework_Debug > 0) then {		["=== VResR Framework initializing... ==="] 
 
 
 // Include here initalization of all script parts
+call compile preprocessFileLineNumbers "vresr_framework\functions\fnc_Spawner.sqf";
 call compile preprocessFileLineNumbers "vresr_framework\functions\fnc_addGroup.sqf";
 call compile preprocessFileLineNumbers "vresr_framework\functions\fnc_addVehicle.sqf";
-call compile preprocessFileLineNumbers "vresr_framework\functions\fnc_Spawner.sqf";
 
 
 // Keep this on the bottom

@@ -9,12 +9,12 @@ VRR_fnc_Spawner - main function to spawn units (groups) and vehicles
 
 VRR_fnc_Spawner = {
 	arrEnemyClasses = ["O_Soldier_F", "O_Soldier_AR_F", "O_medic_F", "O_engineer_F", "O_Soldier_GL_F", "O_soldier_M_F", "O_soldier_exp_F", "O_Soldier_AA_F", "O_Soldier_AT_F" ];
-	arrVehiclesLightArmored = [ "O_LSV_02_armed_F", "O_LSV_02_unarmed_F", "" ];
+	arrVehicles = [ "O_LSV_02_armed_F", "O_LSV_02_unarmed_F", "" ];
 
 	intGroupsSelector = 1;
 	intGroupSize = 3;
-<<<<<<< HEAD
 	sideWanted = east;
+	intVehicles = 2;
 
 	intOmaAsetus = 1;
 
@@ -28,7 +28,7 @@ VRR_fnc_Spawner = {
 	// Generate groups
 	_unitStaticLeaders = ["O_Soldier_SL_F", "O_Soldier_TL_F", "O_officer_F"];
 	_unitGrunt = "O_Soldier_F";
-	for [{private _j = 0}, {_j < intGroups}, {_j = _j + 1}] do {
+	for [{private _i = 0}, {_i < intGroups}, {_i = _i + 1}] do {
 		_marker = enemyArea1;
 		_radius = 100;
 		_targetPos = (getPos _marker) getPos [random(_radius), random(360)];
@@ -36,6 +36,14 @@ VRR_fnc_Spawner = {
 		[_group, _targetPos, 100] call BIS_fnc_taskPatrol;
 	};
 
+	// Generate vehicles
+	for [{private _i = 0}, {_i < intVehicles}, {_i = _i + 1}] do {
+		_marker = enemyArea1;
+		_radius = 100;
+		_targetPos = (getPos _marker) getPos [random(_radius), random(360)];
+		_veh = [arrVehicles, _targetPos, _targetPos] call VRR_fnc_addVehicle;
+
+	};
 };
 
 
