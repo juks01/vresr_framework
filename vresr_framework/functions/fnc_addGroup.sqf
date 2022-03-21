@@ -1,28 +1,44 @@
+/*
 
-						["--addGroup loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];
+VFF_fnc_addGroup - function to add groups
+	-leader and one static grunt is added by default.
+	-if more than 2 enemies wanted, they will be randomized
 
+	Parameters:
+	_units			INTEGER			number of units to spawn in one group
+	_target			ARRAY[x,y,z]	position where to spawn enemies
+	_classes		ARRAY[strings]	array of unit class names to randomly fulfill the group
+	_staticLeaders	ARRAY[strings]	array of unit leader class names
+	_staticGrunt	STRING			class name of static soldier
+	_side			SIDE			side of the group (east, west, ...)
+
+*/
 
 
 VRR_fnc_addGroup = {
-	params ["_enemies", "_target", "_classes", "_staticLeaders", "_staticGrunt", "_side"];
+	params ["_units", "_target", "_classes", "_staticLeaders", "_staticGrunt", "_side"];
 
 	_group = createGroup _side;
-	_group createUnit [selectRandom _staticLeaders, _target, [], 3, "NONE"];			//Lisätään SL tai TL
+	if(count _staticLeaders > 0) then {												// If leader array is defined
+		_group createUnit [selectRandom _staticLeaders, _target, [], 3, "NONE"];		//Lisätään SL tai TL
+	};
+	if(_staticGrunt) then {															// If static soldier is defined
 	_group createUnit [_staticGrunt, _target, [], 3, "NONE"];							//Lisätään rifleman
+	};
 
 	// Add some randomness if more than 2 enemies in a group
-	if(_enemies > 2) then {
-		fixedEnemies = round random [_enemies-2, _enemies, _enemies+1];
+	if(_units > 2) then {
+		fixedUnits = round random [_units-2, _units-1, _units+1];
 	} else {
-		fixedEnemies = 0;
+		fixedUnits = 0;
 	};
 
 	// spawn enemies to group
-	for [{private _i = 0}, {_i < fixedEnemies}, {_i = _i + 1}] do {
+	for [{private _i = 0}, {_i < fixedUnits}, {_i = _i + 1}] do {
 		_group createUnit [selectRandom _classes, _target, [], 3, "NONE"];
 	};
 
-	_group;
+	_group;		// return group (might be needed in future)
 
 };
 
@@ -54,3 +70,8 @@ JPS_fnc_createEnemy = {
 //	["O_G_Soldier_AR_F","O_G_Soldier_M_F","O_G_Soldier_LAT_F","O_G_Sharpshooter_F"]
 //	["O_G_Soldier_SL_F", "O_G_Soldier_TL_F"]
 //	["O_G_Soldier_F"]
+
+
+
+// Keep this on the bottom
+if(VRR_Framework_Debug > 0) then {		["--fnc_addGroup loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];	};

@@ -1,3 +1,11 @@
+/*
+
+VRR_fnc_Spawner - main function to spawn units (groups) and vehicles
+
+	Parameters:
+	None
+
+*/
 
 VRR_fnc_Spawner = {
 	arrEnemyClasses = ["O_Soldier_F", "O_Soldier_AR_F", "O_medic_F", "O_engineer_F", "O_Soldier_GL_F", "O_soldier_M_F", "O_soldier_exp_F", "O_Soldier_AA_F", "O_Soldier_AT_F" ];
@@ -5,6 +13,7 @@ VRR_fnc_Spawner = {
 
 	intGroupsSelector = 1;
 	intGroupSize = 3;
+<<<<<<< HEAD
 	sideWanted = east;
 
 	intOmaAsetus = 1;
@@ -37,3 +46,8 @@ VRR_fnc_Spawner = {
 
 //		_wp = _group addWaypoint [position selectRandom _arrBaseTargets, 0]; 					// TODO TARGET
 //		_wp setWaypointType "SAD";
+
+
+
+// Keep this on the bottom
+if(VRR_Framework_Debug > 0) then {		["-fnc_Spawner loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];	};
