@@ -1,18 +1,37 @@
 /*
     File: description.ext
-    Author: VResR / JukS - https://github.com/juks01/vresr_framework
-    Date: 2022-03-20
-    Last Update: 2022-03-20
+    Author: VResK / JukS - https://github.com/juks01/vresr_framework
+	Developers: JukS, Prisoner, Lion, Marccanen
+    Date: 2022-07-17
+    Last Update: 2022-07-17
     License: -
 
     Description:
-        Arma3 VResR Script Framework
+        Arma3 VResK Script Framework
 
     Reference from where most descriptions are from:
         https://community.bistudio.com/wiki/Description.ext
 */
 
-enableDebugConsole = 1;
+
+enableDebugConsole = 1;		// Enable debug console for admin and host
+respawnOnStart = 0;			// Disable respawn screen on start
+respawnDelay = 15;			// Respawn delay in seconds
 
 // Activate PARAMS menu in slotting
-#include "vresr_framework\ui\mission_params.hpp"
+#include "VRK_Framework\ui\mission_params.hpp"
+
+
+// Mission onLoad settings
+/*
+author			= "VResK";
+onLoadName		= "Point Insertion";
+onLoadMission	= "A group of NATO soldiers is tasked with sabotaging a coastal defense.";
+loadScreen		= "images\loadScreen.paa";
+
+class Header {
+	gameType =  Coop;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 30;	// maximum number of players the mission supports
+};
+*/

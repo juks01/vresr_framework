@@ -1,6 +1,6 @@
 /*
 
-VFF_fnc_addGroup - function to add groups
+VRK_fnc_addGroup - function to add groups
 	-leader and one static grunt is added by default.
 	-if more than 2 enemies wanted, they will be randomized
 
@@ -15,7 +15,7 @@ VFF_fnc_addGroup - function to add groups
 */
 
 
-VRR_fnc_addGroup = {
+VRK_fnc_addGroup = {
 	params ["_units", "_target", "_classes", "_staticLeaders", "_staticGrunt", "_side"];
 
 	_group = createGroup _side;
@@ -28,13 +28,13 @@ VRR_fnc_addGroup = {
 
 	// Add some randomness if more than 2 units in a group
 	if(_units > 2) then {
-		fixedUnits = round random [_units-2, _units-1, _units+1];
+		_fixedUnits = round random [_units-2, _units-1, _units+1];
 	} else {
-		fixedUnits = 0;
+		_fixedUnits = 0;
 	};
 
 	// spawn units to group
-	for [{private _i = 0}, {_i < fixedUnits}, {_i = _i + 1}] do {
+	for [{private _i = 0}, {_i < _fixedUnits}, {_i = _i + 1}] do {
 		[_group, _classes, _target] spawn {
 			params ["_group", "_classes", "_target"];
 			_group createUnit [selectRandom _classes, _target, [], 3, "NONE"];
@@ -45,7 +45,7 @@ VRR_fnc_addGroup = {
 
 };
 
-
+/*
 // SIIRRÄ OMAAN FUNKTIOTIEDOSTOON
 JPS_fnc_createEnemy = {
 	_unitCount = 2;
@@ -73,8 +73,8 @@ JPS_fnc_createEnemy = {
 //	["O_G_Soldier_AR_F","O_G_Soldier_M_F","O_G_Soldier_LAT_F","O_G_Sharpshooter_F"]
 //	["O_G_Soldier_SL_F", "O_G_Soldier_TL_F"]
 //	["O_G_Soldier_F"]
-
+*/
 
 
 // Keep this on the bottom
-if(VRR_Framework_Debug > 0) then {		["--fnc_addGroup loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];	};
+if(VRK_Framework_Debug > 0) then {		["--fnc_addGroup loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];	};

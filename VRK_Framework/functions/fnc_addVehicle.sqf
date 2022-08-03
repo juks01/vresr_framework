@@ -1,6 +1,6 @@
 /*
 
-VRR_fnc_addVehicle - function to add vehicles with crew
+VRK_fnc_addVehicle - function to add vehicles with crew
 
 	Parameters:
 	_arrVehicleTypes	ARRAY[strings]		array of vehicle class names to randomly add
@@ -10,7 +10,7 @@ VRR_fnc_addVehicle - function to add vehicles with crew
 */
 
 
-VRR_fnc_addVehicle = {
+VRK_fnc_addVehicle = {
 	params ["_arrVehicleTypes", "_target", "_objWPTarget"];
 
 	private _veh = createVehicle [selectRandom _arrVehicleTypes, _target, [], 20, "NONE"];
@@ -26,4 +26,4 @@ VRR_fnc_addVehicle = {
 
 
 // Keep this on the bottom
-if(VRR_Framework_Debug > 0) then {		["--fnc_addVehicle loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];		};
+if(VRK_Framework_Debug > 0) then {		["--fnc_addVehicle loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];		};

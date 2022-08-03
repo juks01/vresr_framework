@@ -1,10 +1,10 @@
 ///////////////////////////////////
-//         VResR Spawner         //
+//         VResK Init            //
 ///////////////////////////////////
 
 
 
-// Include and initialize VResR framework
-#include "vresr_framework\init_framework.sqf"
+// Include and initialize VResK framework
+#include "VRK_Framework\init_framework.sqf"
 
 

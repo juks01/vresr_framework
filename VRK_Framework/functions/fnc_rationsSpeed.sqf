@@ -1,6 +1,6 @@
 /*
 
-VFF_fnc_rationsSpeed - function to adjust thirst and hunger
+VRK_fnc_rationsSpeed - function to adjust thirst and hunger
 	-this function can be used to increase hunger and thirst accumuluation
 	-their range is 0 (fine) to 100 ("dead") - status critical at ~95
 	-basically one can count 100 - _accumulation/1min = "death"
@@ -9,11 +9,11 @@ VFF_fnc_rationsSpeed - function to adjust thirst and hunger
 	_accumulation		FLOAT		Amount of increase on every 60sec)		Default: 3
 
 	Example:
-	5 call VRR_fnc_rationsSpeed;	= Roughly ~19 minutes to get in problems
+	5 call VRK_fnc_rationsSpeed;	= Roughly ~19 minutes to get in problems
 
 */
 
-VRR_fnc_rationsSpeed = {
+VRK_fnc_rationsSpeed = {
 	{
 		params ["_accumulation"];
 		[_x, _accumulation] spawn {
@@ -42,4 +42,4 @@ VRR_fnc_rationsSpeed = {
 
 
 // Keep this on the bottom
-if(VRR_Framework_Debug > 0) then {		["--fnc_addGroup loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];	};
+if(VRK_Framework_Debug > 0) then {		["-fnc_rationsSpeed loaded"] remoteExec ["systemChat", [0, -2] select isDedicated];	};
